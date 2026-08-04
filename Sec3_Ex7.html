@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      main {
+        width: 450px;
+        border: 1px solid #000;
+      }
+      form {
+        margin: 2px;
+        border: 15px solid #07f0fc;
+      }
+      h1 {
+        margin: 2px 0px;
+        color: #fff;
+        background-color: orange;
+        text-align: center;
+        padding: 5px;
+      }
+      .box{
+        display: flex;
+        flex-direction: column;
+        margin: 5px;
+      }
+      .box3{
+        display: flex;
+      }
+      .rong{
+        min-width: 70px;
+      }
+      .box1{
+        display: flex;
+        margin: 5px;
+      }
+      .box2{
+        display: flex;
+        margin: 5px;
+      }
+      .box4{
+        display: flex;
+        justify-content: left;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form action="www.myform.com.vn">
+        <h1>SỞ THÍCH CỦA BẠN</h1>
+        <section class="box">
+          <!-- ten -->
+          <div class="box1 ">
+            <label for="name" class="rong">Họ và tên</label>
+
+            <input type="text" id="name" />
+          </div>
+          <!-- email -->
+          <div class="box2">
+            <label for="email" class="rong">Email</label>
+            <input type="text" id="email" />
+          </div>
+          <!-- so thich -->
+          <div class="box3">
+              <div class="box3-1 rong">
+                <label for="hobby">Sở thích</label>
+           
+              </div>
+              <div>
+                 <input type="checkbox" />
+            <label for="" id="">Thể thao</label>
+            <input type="checkbox" />
+            <label for="" id="">Âm nhạc</label>
+            <input type="checkbox" />
+            <label for="" id="">Đọc sách</label><br>
+            <input type="checkbox" />
+            <label for="" id="">Lướt web</label>
+            <input type="checkbox" />
+            <label for="" id="">Chơi game</label>
+            <input type="checkbox" />
+            <label for="" id="">Điện ảnh</label><br>
+            <input type="checkbox" />
+            <label for="" id="">Du lịch</label>
+              </div>
+          </div>
+          <!-- cac nut -->
+          <div class="box4">
+            <div class="rong"></div>
+            <button class="box4-1">Gửi thông tin</button>
+            <button class="box4-2">Nhập lại</button>
+          </div>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>
