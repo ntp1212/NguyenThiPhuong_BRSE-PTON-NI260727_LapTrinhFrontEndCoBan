@@ -1,0 +1,13 @@
+*{
+    margin: 8px;
+    padding: 0;
+    box-sizing: border-box;
+}
+.p2{
+    padding: 9px;
+    background-color: rgb(251, 250, 177);
+    border-left: 5px solid rgba(243, 131, 12, 0.931);
+}
+span{
+    color: orange;
+}
