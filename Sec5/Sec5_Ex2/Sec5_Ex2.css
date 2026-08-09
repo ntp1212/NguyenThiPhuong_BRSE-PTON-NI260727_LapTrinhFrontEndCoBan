@@ -1,0 +1,13 @@
+
+li{
+    
+   margin: 5px;
+    padding: 10px;
+    border: 1px ;
+    width: 100%;
+    color: white;
+    background-color: darkgrey;
+}
+li:hover{
+    background-color: dimgray;
+}

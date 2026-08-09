@@ -1,0 +1,147 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.anh_tieu_de{
+    width: 100%;
+}
+
+.eye{
+    width: 10px;
+    height: auto;
+}
+.box   {
+    position: relative;
+}
+.view  {
+    color: white;
+    width: 100%;
+    background-color: rgba(23, 22, 22, 0.9);
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    display: flex;
+}
+span{
+    display: inline-block;
+    text-align: center;
+}
+.box2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+    min-height: 100vh;
+
+}
+.box2-2{
+   
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 7px solid white;
+}
+.box2-1{
+    width: 600px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 7px solid white;
+
+}
+.anh2{
+    width: 100%;
+    height: 100%;
+    
+}
+.box2-1-1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.upper{
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    background-color: red;
+    border-radius: 2px;
+    padding: 5px;
+}
+.menu{
+    position: absolute;
+    top: 75px;
+    right: 50px;
+    /* background-color: #d82e2e; */
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+}
+.lower{
+   
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    /* background-color: black; */
+    color: black;
+    font-size: 25px;
+    font-weight: 500;
+    
+}
+.line{
+    margin:0 25px;
+    width: 2px;
+    height: 30px;
+    background-color: white;
+}
+.text{
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(255,255,255,0.8);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    background-color: rgba(240, 248, 255, 0.375);
+}
+.icon{
+    background-color: red;
+}
+.box3{
+    position: relative;
+    width: 250px;
+    color: white;
+}
+.anh3{
+    width: 100%;
+}
+.box3-2{
+    position: absolute;
+    top: 250px;
+}
+.explore{
+    color: white;
+    position: relative;
+}
+h2{
+    color: white;
+    font-weight: 700;
+}
+.inline3-2{
+    display: inline-block;
+    border: 1px solid white;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+}

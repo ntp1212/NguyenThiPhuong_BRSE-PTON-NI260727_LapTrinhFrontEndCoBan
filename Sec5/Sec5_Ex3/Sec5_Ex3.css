@@ -1,0 +1,15 @@
+
+a{  
+    
+    padding: 10px;
+    background-color: rgb(205, 202, 202);
+    color: rgb(28, 28, 28);
+    text-decoration: none;
+}
+a:hover {
+    background-color: blueviolet;
+}
+a:active {
+    background-color: red;
+    color: white;
+}
