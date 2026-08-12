@@ -1,0 +1,105 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Section */
+.header {
+    background-color: #2b2e38;
+    color: #ffffff;
+    padding: 20px 40px;
+    overflow: hidden; /*Nếu không dùng sẽ bị dính chữ vào viền dưới nav*/
+}
+
+.header .logo {
+    float: left; 
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+nav .nav-links {
+    float: right;
+    list-style: none;
+    line-height: 30px;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Profile Section */
+.profile {
+    background-color: #ececec;
+    padding: 40px;
+    border-bottom: 1px solid #e0e0e0;
+    /* Khi sử dụng float hoặc absolute thì sẽ làm thẻ cha có height =0 
+    Khác với absolute thì float sẽ không có top, left,... nên để 
+    khắc phục việc này thì sẽ sử dụng overflow:hidden*/
+    overflow: hidden; 
+}
+
+.profile .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    float: left; /* Đưa phần ảnh sang bên phía trái*/
+}
+
+.profile .intro-text {
+    margin-left: 140px; 
+    padding-top: 45px; 
+    font-size: 18px;
+    font-weight: bold;
+    color: #111;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 30px 40px;
+}
+
+.projects-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.projects-section .project-card {
+    display: inline-block;
+    width: 23%; /*Tự tính tỷ lệ 100% chia đều cho 4 phần tử */
+    margin-right: 1.83%; /*ở trên mình dùng 23*4 phần tử = 92% nên cho các phần tử cách thêm khoảng gần 2%*/
+    background-color: #2b2e38;
+    color: #ffffff;
+    text-align: center;
+    padding: 18px 0;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Footer */
+.footer {
+    background-color: #ececec;;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 13px;
+    color: #444;
+}
+
+.footer a {
+    color: #222;
+    font-weight: bold;
+    text-decoration: none;
+}
