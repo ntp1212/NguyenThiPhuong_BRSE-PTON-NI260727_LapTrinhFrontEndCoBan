@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+}
+body > header{
+    width: 100%;
+    background-color: black;
+    color: white;
+    height: 10vh;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+main {
+    flex: 1;
+    margin-right: 20vw;
+}
+body > footer{
+    width: 100%;
+    background-color: black;
+    color: white;
+    height: 10vh;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+nav > ul{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    list-style: none;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    min-height: 700px;
+}
+main .container{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    min-height: 25vh;
+    flex-direction: column;
+    
+    margin: 15px 20vw;
+    background-color: #dfdbdb;
+    line-height: 59px;
+}
+.container .box-1{
+    flex: 1;
+}
+.container .box-2{
+    flex: 1.5;
+}
+a{
+    color: rgb(77, 41, 238);
+    text-decoration: none;
+}
+

@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    background-color: beige;
+    height: 100vh;
+}
+.parent .child{
+    background-color: blue;
+    color: white;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    line-height: 100px;
+}

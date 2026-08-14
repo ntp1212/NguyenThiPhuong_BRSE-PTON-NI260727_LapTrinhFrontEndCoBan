@@ -1,0 +1,22 @@
+*{
+    pad: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+main{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 30vh;
+   text-align: center;
+    justify-content: center;
+    font-size: 30px;
+}
+main .box{
+    min-width: calc(25% - 20px);
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+    margin: 5px;
+    line-height: 150px;
+}

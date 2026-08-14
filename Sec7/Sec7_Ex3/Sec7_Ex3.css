@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  height: 300px;
+  justify-content: space-evenly;
+  
+}
+.parent .child {
+    flex: 0 0 calc(25% - 20px);
+  color: white;
+  font-size: 2rem;
+  height: 100px;
+  background-color: rgb(76, 149, 216);
+  text-align: center;
+  line-height: 100px;
+  border-radius: 5px;
+}
+.parent .large {
+    flex: 0 0 calc(50% - 20px);
+}
