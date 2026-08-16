@@ -3,8 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-size: 18px;
+}
 h1{
     margin: 10px 0 40px 0;
+    
 }
 /* book details */
 h2{
@@ -140,7 +144,7 @@ justify-content: start;
     gap: 5px;
 }
 .pay .pay-block > img{
-    width: calc(50% -50px);
+    width: 50%;
     
 }
 .pay-box-1{
@@ -242,12 +246,35 @@ footer section p{
 /* dienthoai */
 @media screen and (max-width: 480px) {
     main{
-    display: flex;
-    flex-flow: column wrap;
-    gap: 20px;
-    width: 100%;
+    flex-direction: column;
+        padding: 20px;
 }
 main > section.container{
-    width: calc(100% - 20px);
+    width: 100%;
+    min-height: 33vh;
 }
+header {
+        height: auto;
+        align-items: center;
+    }
+
+    header nav ul {
+        gap: 3px;
+    }
+
+    header nav ul li {
+        font-size: 12px;
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer .footer-big {
+        order: 4;
+    }
+
+    footer .footer-container {
+        width: 100%;
+    }
 }
