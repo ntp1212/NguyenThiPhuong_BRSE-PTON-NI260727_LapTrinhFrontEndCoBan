@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    color: white;
+}
+.container .block{
+    width: calc(25% - 10px);
+    background-color: rgb(246, 108, 108);
+    height: 10vh;
+    line-height: 10vh;
+    text-align: center;
+}
+@media screen and (max-width: 768px) {
+    .container .block{
+    width: calc(50% - 10px);
+    
+}
+}
+@media screen and (max-width: 480px) {
+    .container .block{
+    width: calc(100% - 10px);
+    
+}
+}

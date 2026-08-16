@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./Sec8_Ex1.css"> -->
+     <style>
+        main{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    gap: 20px;
+}
+main > .block{
+    display: flex;
+    width: calc(50% - 20px);
+    background-color: rgb(74, 201, 233);
+    height: 70px;
+    /* line-height:50px ; */
+    justify-content: center;
+    align-items: center;
+}
+main > .large{
+    width: calc(100% - 20px);
+}
+@media screen and (max-width: 780px  ){
+    main{
+        display: flex;
+        flex-flow: column wrap;
+    }
+    main > .block{
+        width: calc(100% - 20px);
+    }
+}
+     </style>
+</head>
+<body>
+    <main>
+        <section class="block">Khối 1</section>
+        <section class="block">Khối 2</section>
+        <section class="block large">Khối 3</section>
+    </main>
+</body>
+</html>

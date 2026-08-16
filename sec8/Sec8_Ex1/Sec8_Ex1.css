@@ -1,0 +1,33 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    gap: 20px;
+}
+main > .block{
+    display: flex;
+    width: calc(50% - 20px);
+    background-color: rgb(74, 201, 233);
+    height: 70px;
+    /* line-height:50px ; */
+    justify-content: center;
+    align-items: center;
+}
+main > .large{
+    width: calc(100% - 20px);
+}
+@media screen and (max-with: 768px  ){
+    main{
+        display: flex;
+        flex-flow: column wrap;
+    }
+    main > .block{
+        width: calc(100% - 20px);
+    }
+}

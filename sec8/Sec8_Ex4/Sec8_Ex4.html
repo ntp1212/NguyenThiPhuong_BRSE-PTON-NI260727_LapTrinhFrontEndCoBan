@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./Sec8_Ex4.css"> -->
+     <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* the nav */
+header > nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+/* css phan logo */
+nav > .logo{
+    line-height: 5vh;
+}
+/* phan thanh dieu huowng */
+ul{
+   list-style: none;
+}
+nav > .nav1{
+    display: inline-flex;
+    flex-flow: row nowrap;
+    gap: 10px;
+    height: 5vh;
+    line-height: 5vh;
+    justify-content: center;
+    align-items: center;
+}
+/* phan chinh */
+main{
+    display: flex;
+    flex-flow: column wrap;
+}
+main > .container{
+    width: 100%;
+    
+    justify-content: center;
+    
+    
+}
+main > .big{
+    margin: 0 0 20px 0;
+    text-align: center;
+    line-height: 400px;
+    color: gray;
+    font-size: 70px;
+    background-color: rgb(203, 206, 210);
+    height: 400px;
+}
+main > .small-container{
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.small-container .block{
+    width: calc(50% - 10px);
+    height: 10vh ;
+    line-height: 10vh;
+    text-align: center;
+    background-color: rgb(244, 244, 242);
+    
+}
+
+@media screen and (max-width: 768px){
+    main > .small-container{
+       
+    
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.small-container .block{
+    margin: 0 30px 20px 30px;
+    width: calc(100% - 60px);
+    height: 10vh ;
+    line-height: 10vh;
+    text-align: center;
+    background-color: rgb(244, 244, 242);
+    
+}
+
+}
+     </style>
+</head>
+<body>
+    <!-- Phan dau trang -->
+    <header>
+        <nav>
+            <!-- logo ben tria -->
+            <ul class="logo">
+                <li>Logo</li>
+        </ul>
+        <!-- thanh dieu huong ben phai -->
+            <ul class="nav1">
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+                
+            </ul>
+        </nav>
+    </header>
+    <!-- phan chinh -->
+    <main>
+        <!-- phan chinh 1 -->
+        <section class="container big">
+            <p>1200 x 400</p>
+        </section>
+        <!-- phan chinh 2 -->
+        <section class="container small-container">
+            <div class="block">Gới thiệu 1</div>
+            <div class="block">Gới thiệu 2</div>
+            <div class="block big-block">Gới thiệu 3</div>
+        </section>
+    </main>
+</body>
+</html>

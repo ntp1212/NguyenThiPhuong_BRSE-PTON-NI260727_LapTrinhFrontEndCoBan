@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* the nav */
+header > nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+/* css phan logo */
+nav > .logo{
+    line-height: 5vh;
+}
+/* phan thanh dieu huowng */
+ul{
+   list-style: none;
+}
+nav > .nav1{
+    display: inline-flex;
+    flex-flow: row nowrap;
+    gap: 10px;
+    height: 5vh;
+    line-height: 5vh;
+    justify-content: center;
+    align-items: center;
+}
+/* phan chinh */
+main{
+    display: flex;
+    flex-flow: column wrap;
+}
+main > .container{
+    width: 100%;
+    
+    justify-content: center;
+    
+    
+}
+main > .big{
+    margin: 0 0 20px 0;
+    text-align: center;
+    line-height: 400px;
+    color: gray;
+    font-size: 70px;
+    background-color: rgb(203, 206, 210);
+    height: 400px;
+}
+main > .small-container{
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.small-container .block{
+    width: calc(50% - 10px);
+    height: 10vh ;
+    line-height: 10vh;
+    text-align: center;
+    background-color: rgb(244, 244, 242);
+    
+}
+
+@media screen and (max-width: 768px){
+    main > .small-container{
+       
+    
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.small-container .block{
+    margin: 0 30px 20px 30px;
+    width: calc(100% - 10px);
+    height: 10vh ;
+    line-height: 10vh;
+    text-align: center;
+    background-color: rgb(244, 244, 242);
+    
+}
+
+}
