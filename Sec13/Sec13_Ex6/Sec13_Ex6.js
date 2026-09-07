@@ -1,5 +1,6 @@
 let arr = [];
-for (let i=0; i<20; i++) {
+let arrLength = Math.floor(Math.random()*11 + 10);
+for (let i=0; i<arrLength; i++) {
     arr.push(Math.floor(Math.random() * 10));
 }
 let count = 0;
