@@ -1,0 +1,14 @@
+.color-white{
+    padding: 20px;
+    color: white;
+    background-color: black;
+    height: 180px;
+    width: 450px;
+}
+.color-black {
+    padding: 20px;
+    color: black;
+    background-color: white;
+    height: 180px;
+    width: 450px;
+}

@@ -1,0 +1,173 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Ảnh nền */
+    background-image: url("https://cdn2.fptshop.com.vn/unsafe/800x0/hinh_nen_phong_canh_anime_21_1d1a6c6656.jpg");
+    background-size: cover;
+    background-position: center;
+
+    font-family: Arial, sans-serif;
+}
+
+/* Khung đăng nhập */
+.login-box {
+    width: 263px;
+    min-height: 323px;
+
+    background-color: white;
+
+    text-align: center;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Tiêu đề LOG IN */
+.login-title {
+    height: 44px;
+
+    background-color: #35acd5;
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* Form */
+form {
+    padding: 32px 15px 0;
+}
+
+/* Ô nhập Email và Password */
+form input {
+    width: 100%;
+    height: 30px;
+
+    margin-bottom: 16px;
+
+    padding: 0 9px;
+
+    border: 1px solid #d3d3d3;
+
+    outline: none;
+
+    font-size: 11px;
+}
+
+/* Khi click vào input */
+form input:focus {
+    border-color: #35acd5;
+}
+
+/* Nút Submit */
+form button {
+    width: 100%;
+    height: 28px;
+
+    border: none;
+
+    background-color: #f84e51;
+
+    color: white;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #e83d40;
+}
+
+/* Chữ OR */
+.or {
+    margin-top: 14px;
+
+    color: #35acd5;
+
+    font-size: 13px;
+}
+
+/* Các icon mạng xã hội */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+
+    margin-top: 13px;
+}
+
+.social-icons a {
+    width: 27px;
+    height: 27px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+/* Màu icon Facebook */
+.facebook {
+    background-color: #6685b8;
+}
+
+/* Màu icon Twitter */
+.twitter {
+    background-color: #65b8e8;
+}
+
+/* Màu icon Google */
+.google {
+    background-color: #ed7770;
+}
+
+/* Dòng Signup */
+.signup {
+    margin-top: 15px;
+
+    color: #999;
+
+    font-size: 10px;
+}
+
+.signup a {
+    color: #35acd5;
+
+    text-decoration: none;
+}
+
+/* Forgot password */
+.forgot {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #35acd5;
+
+    font-size: 10px;
+
+    text-decoration: none;
+}
