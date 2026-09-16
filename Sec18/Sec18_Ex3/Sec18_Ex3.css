@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.todo-container {
+  width: 600px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Phần Header màu đỏ */
+.todo-header {
+  background-color: #f44336;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.todo-header h2 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+/* Khung nhập liệu và nút Thêm */
+.input-group {
+  display: flex;
+  justify-content: center;
+}
+
+.input-group input {
+  width: 70%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: white;
+}
+
+.input-group input::placeholder {
+  color: #888;
+}
+
+.input-group button {
+  width: 25%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  background-color: #d1d1d1;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.input-group button:hover {
+  background-color: #bcbcbc;
+}
+
+/* Danh sách các công việc */
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  padding: 15px 20px;
+  font-size: 18px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+}
+
+/* Tùy chỉnh checkbox và khoảng cách */
+.todo-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+/* Các mục đã hoàn thành (màu xám tối, có dấu gạch ngang chữ) */
+.todo-item.completed {
+  background-color: #888888;
+  color: white;
+  text-decoration: line-through;
+}
+
+/* Các mục chưa hoàn thành (màu trắng và xám xen kẽ) */
+.todo-item:nth-child(even):not(.completed) {
+  background-color: #f9f9f9;
+}
+
+.todo-item:nth-child(odd):not(.completed) {
+  background-color: #ffffff;
+}
+
+.todo-list .input-value {
+    width: 100%;
+}
+.todo-list .inline-box{
+    display: inline-block;
+}
+.todo-list .inline-btn{
+    margin:  0 5px;
+    display: none;
+}
+.action{
+  display: inline-block !important;
+}

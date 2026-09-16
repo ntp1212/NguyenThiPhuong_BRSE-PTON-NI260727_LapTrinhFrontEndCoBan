@@ -1,0 +1,137 @@
+* {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding-top: 40px;
+        }
+
+        .container {
+            width: 750px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 26px;
+            color: #111;
+        }
+
+        /* Form nhập liệu sử dụng CSS Grid */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-color: #007bff;
+        }
+
+        /* Nút Thêm sinh viên */
+        .btn-add {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-add:hover {
+            background-color: #0056b3;
+        }
+
+        /* Ô tìm kiếm */
+        .search-box {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+
+        /* Khu vực danh sách sử dụng kết hợp Flexbox và CSS Grid */
+        .student-table {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        /* Mỗi dòng dùng CSS Grid để chia cột cân đối giống table */
+        .student-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            align-items: center;
+            padding: 12px 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .student-header {
+            font-weight: bold;
+            color: #111;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .student-row div {
+            color: #333;
+        }
+
+        /* Cụm nút hành động dùng Flexbox */
+        .action-buttons {
+            display: flex;
+            gap: 5px;
+        }
+
+        .btn-edit {
+            background-color: #ffc107;
+            color: #fff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-edit:hover {
+            background-color: #e0a800;
+        }
+
+        .btn-delete {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-delete:hover {
+            background-color: #c82333;
+        }

@@ -1,0 +1,85 @@
+* {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #e6e6e6;
+            padding: 25px;
+            border-radius: 8px;
+            width: 650px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dòng chữ hướng dẫn */
+        .instruction {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        /* Ô nhập liệu */
+        .text-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            outline: none;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .text-input::placeholder {
+            color: #999;
+        }
+
+        /* Khung chứa các nút bấm bàn phím */
+        .keyboard-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 10px;
+        }
+
+        /* Kiểu chung cho các nút chữ */
+        .key-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 14px 0;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .key-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .key-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Nút Xóa màu đỏ */
+        .key-delete {
+            background-color: #dc3545;
+        }
+
+        .key-delete:hover {
+            background-color: #a71d2a;
+        }

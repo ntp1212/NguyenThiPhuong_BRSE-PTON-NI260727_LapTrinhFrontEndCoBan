@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Sec18_Ex3.css">
+</head>
+<body>
+    <div class="todo-container">
+        <!-- Header -->
+        <div class="todo-header">
+            <h2>Danh sách những việc cần làm trong năm</h2>
+            <div class="input-group">
+                <input type="text" placeholder="Title..." id="new-value">
+                <button class="btn1">Thêm</button>
+            </div>
+        </div>
+
+        <!-- Danh sách công việc có checkbox -->
+        <ul class="todo-list">
+            <li class="todo-item completed">
+                <input type="checkbox" checked>
+                <span class="input-value">Xin việc ở Google</span> 
+                <button class="inline-btn edit-btn">Edit</button>
+                <button class="inline-btn delete-btn">Delete</button>
+
+            </li>
+            <li class="todo-item completed">
+                <input type="checkbox" checked>
+                <span class="input-value">Mua biệt thự</span> 
+                <button class="inline-btn edit-btn">Edit</button>
+                <button class="inline-btn delete-btn">Delete</button>
+            </li>
+            <li class="todo-item">
+                <input type="checkbox">
+                <span class="input-value">Cưới vợ</span> 
+                <button class="inline-btn edit-btn">Edit</button>
+                <button class="inline-btn delete-btn">Delete</button>
+            </li>
+            <li class="todo-item">
+                <input type="checkbox">
+                <span class="input-value">Mua xe hơi</span> 
+                <button class="inline-btn edit-btn">Edit</button>
+                <button class="inline-btn delete-btn">Delete</button>
+            </li>
+            <li class="todo-item">
+                <input type="checkbox">
+                <span class="input-value">Sinh con</span> 
+                <button class="inline-btn edit-btn">Edit</button>
+                <button class="inline-btn delete-btn">Delete</button>
+            </li>
+            <li class="todo-item">
+                <input type="checkbox"> 
+                <span class="input-value">Đi du lịch vòng quanh thế giới</span>
+                <button class="inline-btn edit-btn">Edit</button>
+                <button class="inline-btn delete-btn">Delete</button>
+            </li>
+        </ul>
+    </div>
+    <script src="./Sec18_Ex3.js"></script>
+</body>
+</html>

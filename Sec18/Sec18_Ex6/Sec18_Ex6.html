@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý danh sách sinh viên</title>
+    <link rel="stylesheet" href="./Sec18_Ex6.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Quản lý danh sách sinh viên</h2>
+
+        <!-- Form nhập thông tin (Grid Layout) -->
+        <div class="form-grid">
+            <input type="text" class="form-input" placeholder="Tên sinh viên">
+            <input type="number" class="form-input" placeholder="Tuổi">
+        </div>
+        <div class="form-grid">
+            <input type="text" class="form-input" placeholder="Lớp">
+            <button class="btn-add">Thêm sinh viên</button>
+        </div>
+
+        <!-- Ô tìm kiếm -->
+        <input type="text" class="search-box" placeholder="Tìm kiếm sinh viên...">
+
+        <!-- Bảng danh sách xây dựng bằng Flexbox & Grid -->
+        <div class="student-table">
+            <!-- Tiêu đề cột -->
+            <div class="student-row student-header">
+                <div>Tên</div>
+                <div>Tuổi</div>
+                <div>Lớp</div>
+                <div>Hành động</div>
+            </div>
+            <!-- Dữ liệu sinh viên 1 -->
+            <div class="student-row">
+                <div>Huấn</div>
+                <div>18</div>
+                <div>A1</div>
+                <div class="action-buttons">
+                    <button class="btn-edit">Sửa</button>
+                    <button class="btn-delete">Xóa</button>
+                </div>
+            </div>
+            <!-- Dữ liệu sinh viên 2 -->
+            <div class="student-row">
+                <div>Cường</div>
+                <div>22</div>
+                <div>A1</div>
+                <div class="action-buttons">
+                    <button class="btn-edit">Sửa</button>
+                    <button class="btn-delete">Xóa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</body>
+</html>
