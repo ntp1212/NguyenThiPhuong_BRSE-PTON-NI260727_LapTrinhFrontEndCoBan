@@ -1,130 +1,106 @@
-// Lấy dữ liệu từ localStorage nếu có, nếu không dùng danh sách mẫu ban đầu
-        let todos = JSON.parse(localStorage.getItem('todos')) || [
-            { id: 1, text: "Xin việc ở Google", completed: true },
-            { id: 2, text: "Mua biệt thự", completed: true },
-            { id: 3, text: "Cưới vợ", completed: false },
-            { id: 4, text: "Mua xe hơi", completed: false },
-            { id: 5, text: "Sinh con", completed: false },
-            { id: 6, text: "Đi du lịch vòng quanh thế giới", completed: false }
-        ];
+// get input name
+let studentName = document.getElementById('student-name');
+console.log(studentName);
+// get input age
+let studentAge = document.getElementById('student-age');
+console.log(studentAge);
+//get input class
+let studentClass = document.getElementById('student-class');
+console.log(studentClass);
+// get add btn
+let addBtn = document.getElementById('add-btn');
+console.log(addBtn);
+// get input search
+let searchBtn = document.getElementById('search-btn');
+console.log(searchBtn);
+// get update btn
+let updateBtn = document.querySelectorAll('.btn-edit');
+console.log(updateBtn);
+// get delete btn
+let deleteBtn = document.querySelectorAll('.btn-delete');
+console.log(deleteBtn);
+// get student table
+let studentList = document.getElementById('student-table');
+console.log(studentList);
 
-        let editId = null; // Biến lưu ID của công việc đang được sửa
+// tao function create
+let createNew = function (btn) {btn.addEventListener('click',()=> {
+// get value form input name
+console.log(studentName.value);
+console.log(studentAge.value);
+console.log(studentClass.value);
+// add value into list
+studentList.innerHTML += `
+<div class="student-row">
+                <div>${studentName.value}</div>
+                <div>${studentAge.value}</div>
+                <div>${studentClass.value}</div>
+                <div class="action-buttons">
+                    <button id="update-btn" class="btn-edit">Sửa</button>
+                    <button id="delete-btn" class="btn-delete">Xóa</button>
+                </div>
+            </div>
+`
+// delete value form input
+studentName.value = '';
+studentAge.value ='';
+studentClass.value = ''
+})
+}
+// Thêm sinh viên mới:
+//  Nhập thông tin sinh viên (tên, tuổi, lớp) vào 
+// một biểu mẫu và thêm vào danh sách.
+createNew(addBtn);
+// addBtn.addEventListener('click',()=> {
+// // get value form input name
+// console.log(studentName.value);
+// console.log(studentAge.value);
+// console.log(studentClass.value);
+// // add value into list
+// studentList.innerHTML += `
+// <div class="student-row">
+//                 <div>${studentName.value}</div>
+//                 <div>${studentAge.value}</div>
+//                 <div>${studentClass.value}</div>
+//                 <div class="action-buttons">
+//                     <button id="update-btn" class="btn-edit">Sửa</button>
+//                     <button id="delete-btn" class="btn-delete">Xóa</button>
+//                 </div>
+//             </div>
+// `
+// // delete value form input
+// studentName.value = '';
+// studentAge.value ='';
+// studentClass.value = ''
+// })
+// Hiển thị danh sách sinh viên: 
+// Thông tin sinh viên sẽ được hiển thị dưới dạng bảng.
 
-        const todoInput = document.getElementById('todo-input');
-        const addBtn = document.getElementById('add-btn');
-        const todoList = document.getElementById('todo-list');
 
-        // Hàm lưu vào LocalStorage
-        function saveToLocalStorage() {
-            localStorage.setItem('todos', JSON.stringify(todos));
-        }
 
-        // R - READ: Hiển thị danh sách công việc lên giao diện
-        function renderTodos() {
-            todoList.innerHTML = '';
-            todos.forEach(todo => {
-                const li = document.createElement('li');
-                li.className = `todo-item ${todo.completed ? 'completed' : ''}`;
-                
-                li.innerHTML = `
-                    <div class="todo-content" onclick="toggleStatus(${todo.id})">
-                        <input type="checkbox" ${todo.completed ? 'checked' : ''} onclick="event.stopPropagation(); toggleStatus(${todo.id})">
-                        <span>${escapeHtml(todo.text)}</span>
-                    </div>
-                    <div class="todo-actions">
-                        <button class="btn-edit" onclick="editTodo(${todo.id})">Sửa</button>
-                        <button class="btn-delete" onclick="deleteTodo(${todo.id})">Xóa</button>
-                    </div>
-                `;
-                todoList.appendChild(li);
-            });
-        }
+// Xóa sinh viên: 
+// Mỗi dòng trong bảng có một nút xóa để xóa sinh viên khỏi danh sách.
+deleteBtn.forEach((el)=> {
+    el.addEventListener('click', ()=> {
+        console.log(el.parentElement.parentElement);
+        
+        el.parentElement.parentElement.remove();
+    })
+})
 
-        // C - CREATE & U - UPDATE: Thêm mới hoặc Cập nhật công việc
-        function handleAddOrUpdate() {
-            const text = todoInput.value.trim();
-            if (!text) {
-                alert('Vui lòng nhập nội dung công việc!');
-                return;
-            }
+// Sửa thông tin sinh viên:
+//  Khi bấm nút "Sửa", cho phép chỉnh sửa thông tin sinh viên.
+updateBtn.forEach((el)=> { 
+    el.addEventListener('click',()=>{
+        let inputBox = el.closest('.student-row');;
+        console.log(inputBox);
+        console.log(inputBox.children[0].textContent);
+        studentName.value = inputBox.children[0].textContent;
+        studentAge.value = inputBox.children[1].textContent;
+        studentClass.value = inputBox.children[2].textContent;
+        
+    })
+})
 
-            if (editId !== null) {
-                // UPDATE: Cập nhật công việc đang sửa
-                todos = todos.map(todo => {
-                    if (todo.id === editId) {
-                        return { ...todo, text: text };
-                    }
-                    return todo;
-                });
-                editId = null;
-                addBtn.innerText = 'Thêm';
-            } else {
-                // CREATE: Thêm công việc mới
-                const newTodo = {
-                    id: Date.now(),
-                    text: text,
-                    completed: false
-                };
-                todos.push(newTodo);
-            }
-
-            todoInput.value = '';
-            saveToLocalStorage();
-            renderTodos();
-        }
-
-        // Đổi trạng thái hoàn thành (Check / Uncheck)
-        function toggleStatus(id) {
-            todos = todos.map(todo => {
-                if (todo.id === id) {
-                    return { ...todo, completed: !todo.completed };
-                }
-                return todo;
-            });
-            saveToLocalStorage();
-            renderTodos();
-        }
-
-        // Đưa dữ liệu lên ô input để chuẩn bị sửa (Update preparation)
-        function editTodo(id) {
-            const todo = todos.find(t => t.id === id);
-            if (todo) {
-                todoInput.value = todo.text;
-                editId = id;
-                addBtn.innerText = 'Lưu';
-                todoInput.focus();
-            }
-        }
-
-        // D - DELETE: Xóa công việc
-        function deleteTodo(id) {
-            if (confirm('Bạn có chắc chắn muốn xóa công việc này không?')) {
-                todos = todos.filter(todo => todo.id !== id);
-                // Nếu đang sửa mục này mà lại bấm xóa thì reset nút về Thêm
-                if (editId === id) {
-                    editId = null;
-                    todoInput.value = '';
-                    addBtn.innerText = 'Thêm';
-                }
-                saveToLocalStorage();
-                renderTodos();
-            }
-        }
-
-        // Chống lỗi bảo mật XSS cơ bản khi in text ra HTML
-        function escapeHtml(str) {
-            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-        }
-
-        // Sự kiện click nút Thêm/Lưu
-        addBtn.addEventListener('click', handleAddOrUpdate);
-
-        // Sự kiện nhấn phím Enter để thêm/sửa nhanh
-        todoInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                handleAddOrUpdate();
-            }
-        });
-
-        // Khởi chạy hiển thị lần đầu
-        renderTodos();
+// Tìm kiếm sinh viên: 
+// Tìm kiếm sinh viên theo tên.
