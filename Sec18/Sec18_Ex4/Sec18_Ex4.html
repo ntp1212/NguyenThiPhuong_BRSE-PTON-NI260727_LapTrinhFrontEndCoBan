@@ -1,22 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bàn phím ảo</title>
     <link rel="stylesheet" href="./Sec18_Ex4.css">
-</head>
-<body>
-    <div class="container">
-        <!-- Hướng dẫn -->
-        <div class="instruction">Khi click vào một chữ thì chữ phải được đổ vào ô input ở phía trên</div>
-        
-        <!-- Ô input -->
-        <input type="text" id="inputField" class="text-input" placeholder="Nhập ở đây...">
+  </head>
+  <body>
+    <div class="keyboard-container">
+      <!-- Ô nhập liệu -->
+      <input id="display" type="text" class="input-box" placeholder="Nhập ở đây..." />
 
-        <!-- Bàn phím ảo A-Z và Xóa -->
-        <div class="keyboard-grid" id="keyboardGrid"></div>
+      <!-- Lưới phím từ A-Z và nút Xóa -->
+      <div class="keyboard-grid">
+        <!-- Hàng 1 -->
+        <button class="key-btn">A</button>
+        <button class="key-btn">B</button>
+        <button class="key-btn">C</button>
+        <button class="key-btn">D</button>
+        <button class="key-btn">E</button>
+        <button class="key-btn">F</button>
+        <button class="key-btn">G</button>
+        <button class="key-btn">H</button>
+        <button class="key-btn">I</button>
+        <button class="key-btn">J</button>
+
+        <!-- Hàng 2 -->
+        <button class="key-btn">K</button>
+        <button class="key-btn">L</button>
+        <button class="key-btn">M</button>
+        <button class="key-btn">N</button>
+        <button class="key-btn">O</button>
+        <button class="key-btn">P</button>
+        <button class="key-btn">Q</button>
+        <button class="key-btn">R</button>
+        <button class="key-btn">S</button>
+        <button class="key-btn">T</button>
+
+        <!-- Hàng 3 -->
+        <button class="key-btn">U</button>
+        <button class="key-btn">V</button>
+        <button class="key-btn">W</button>
+        <button class="key-btn">X</button>
+        <button class="key-btn">Y</button>
+        <button class="key-btn">Z</button>
+        <button class="key-btn btn-delete" id="delete-button">Xóa</button>
+      </div>
     </div>
     <script src="./Sec18_Ex4.js"></script>
-</body>
+  </body>
 </html>
