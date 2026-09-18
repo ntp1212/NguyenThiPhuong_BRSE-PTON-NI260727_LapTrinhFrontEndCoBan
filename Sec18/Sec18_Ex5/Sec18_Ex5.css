@@ -30,7 +30,7 @@
         /* Form nhập liệu sử dụng CSS Grid */
         .form-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 15px;
             margin-bottom: 15px;
         }
@@ -66,7 +66,7 @@
 
         /* Ô tìm kiếm */
         .search-box {
-            width: 100%;
+            width: 32%;
             padding: 12px 15px;
             font-size: 15px;
             border: 1px solid #ccc;
