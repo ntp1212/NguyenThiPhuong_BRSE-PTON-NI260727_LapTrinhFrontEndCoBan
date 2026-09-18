@@ -20,8 +20,8 @@ console.log(updateBtn);
 let deleteBtn = document.querySelectorAll('.btn-delete');
 console.log(deleteBtn);
 // get student table
-let studentList = document.getElementById('student-table');
-console.log(studentList);
+let studentLists = document.getElementById('student-table');
+console.log(studentLists);
 
 // tao function create
 let createNew = function (btn) {btn.addEventListener('click',()=> {
@@ -30,7 +30,7 @@ console.log(studentName.value);
 console.log(studentAge.value);
 console.log(studentClass.value);
 // add value into list
-studentList.innerHTML += `
+studentLists.innerHTML += `
 <div class="student-row">
                 <div>${studentName.value}</div>
                 <div>${studentAge.value}</div>
@@ -46,6 +46,7 @@ studentName.value = '';
 studentAge.value ='';
 studentClass.value = ''
 })
+return btn;
 }
 // Thêm sinh viên mới:
 //  Nhập thông tin sinh viên (tên, tuổi, lớp) vào 
@@ -57,7 +58,7 @@ createNew(addBtn);
 // console.log(studentAge.value);
 // console.log(studentClass.value);
 // // add value into list
-// studentList.innerHTML += `
+// studentLists.innerHTML += `
 // <div class="student-row">
 //                 <div>${studentName.value}</div>
 //                 <div>${studentAge.value}</div>
@@ -104,3 +105,20 @@ updateBtn.forEach((el)=> {
 
 // Tìm kiếm sinh viên: 
 // Tìm kiếm sinh viên theo tên.
+
+
+let search = function () {
+    let lists = document.querySelectorAll( ".student-row:not(.student-header)");
+    let searchText = searchBtn.value.trim().toLowerCase();
+    lists.forEach((el)=> {
+        let elTetx = el.children[0].innerText.trim().toLowerCase();
+        console.log(elTetx);
+        if(!elTetx.includes(searchText)) {
+            el.classList.add('hidden')
+        } else{
+            el.classList.remove('hidden')
+
+        }
+    })
+};
+searchBtn.oninput = search;
