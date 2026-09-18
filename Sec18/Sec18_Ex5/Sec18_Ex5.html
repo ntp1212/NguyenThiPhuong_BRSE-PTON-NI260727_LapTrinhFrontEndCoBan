@@ -13,21 +13,21 @@
 
         <!-- Form nhập thông tin (Grid Layout) -->
         <div class="form-grid">
-            <input type="text" class="form-input" placeholder="Tên sinh viên">
-            <input type="number" class="form-input" placeholder="Tuổi">
+            <input id="student-name" type="text" class="form-input" placeholder="Tên sinh viên">
+            <input id="student-age" type="number" class="form-input" placeholder="Tuổi">
         </div>
         <div class="form-grid">
-            <input type="text" class="form-input" placeholder="Lớp">
-            <button class="btn-add">Thêm sinh viên</button>
+            <input id="student-class" type="text" class="form-input" placeholder="Lớp">
+            <button class="btn-add" id="add-btn">Thêm sinh viên</button>
         </div>
 
         <!-- Ô tìm kiếm -->
-        <input type="text" class="search-box" placeholder="Tìm kiếm sinh viên...">
+        <input id="search-btn" type="text" class="search-box" placeholder="Tìm kiếm sinh viên...">
 
         <!-- Bảng danh sách xây dựng bằng Flexbox & Grid -->
-        <div class="student-table">
+        <div class="student-table" id="student-table">
             <!-- Tiêu đề cột -->
-            <div class="student-row student-header">
+            <div class="student-row student-header" >
                 <div>Tên</div>
                 <div>Tuổi</div>
                 <div>Lớp</div>
