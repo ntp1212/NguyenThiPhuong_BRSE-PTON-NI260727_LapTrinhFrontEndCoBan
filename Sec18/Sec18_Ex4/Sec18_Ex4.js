@@ -1,27 +1,26 @@
-const inputField = document.getElementById('inputField');
-        const keyboardGrid = document.getElementById('keyboardGrid');
+let keyBtn = document.querySelectorAll('.key-btn');
+let deleteBtn = document.getElementById('delete-button');
+let display = document.getElementById('display');
+console.log(keyBtn);
+console.log(deleteBtn);
+console.log(display);
+// lang nghe nhan phim va dua chu len o input
 
-        // Danh sách các chữ cái từ A đến Z
-        const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-
-        // Tạo các nút chữ cái A-Z
-        alphabet.forEach(letter => {
-            const button = document.createElement('button');
-            button.classList.add('key-btn');
-            button.innerText = letter;
-            button.addEventListener('click', () => {
-                inputField.value += letter;
-                inputField.focus();
-            });
-            keyboardGrid.appendChild(button);
-        });
-
-        // Tạo nút Xóa
-        const deleteButton = document.createElement('button');
-        deleteButton.classList.add('key-btn', 'key-delete');
-        deleteButton.innerText = "Xóa";
-        deleteButton.addEventListener('click', () => {
-            inputField.value = inputField.value.slice(0, -1);
-            inputField.focus();
-        });
-        keyboardGrid.appendChild(deleteButton);
+keyBtn.forEach((el) => {
+    el.addEventListener('click', (ev)=> {
+        // lang nghe
+    console.log(ev.target.innerText);
+    //dua len o input
+    if(ev.target.innerText === 'Xóa') {
+        display.value +=''
+    } else{
+        display.value += ev.target.innerText;
+    }
+    
+})
+})
+// Xoa
+deleteBtn.addEventListener('click', (ev)=> {
+    console.log(deleteBtn.innerText)
+    display.value = display.value.slice(0,-1);
+})
