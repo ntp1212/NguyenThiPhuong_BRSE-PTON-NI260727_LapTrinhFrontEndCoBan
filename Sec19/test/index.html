@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <main class="task-container">
+
+        <!-- Tiêu đề -->
+        <header class="task-header">
+            <h1 class="task-title">Task Management</h1>
+        </header>
+
+        <!-- Form nhập task -->
+        <form class="form">
+
+            <form class="task-form" id="task-form">
+
+                <!-- Content -->
+                <input
+                    type="text"
+                    class="form-input"
+                    id="content"
+                    placeholder="Content"
+                >
+
+                <!-- Due date -->
+                <input
+                    type="date"
+                    class="form-input"
+                    id="due-date"
+                >
+
+                <!-- Status -->
+                <select
+                    class="form-select"
+                    id="status"
+                >
+                    <option value="" selected disabled>
+                        Choose status
+                    </option>
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="Completed">
+                        Completed
+                    </option>
+                </select>
+
+                <!-- Assigned to -->
+                <input
+                    type="text"
+                    class="form-input"
+                    id="assigned-to"
+                    placeholder="Username"
+                >
+
+                <!-- Submit -->
+                <button
+                    type="submit"
+                    class="form-submit"
+                    id="submit-btn"
+                >
+                    Submit
+                </button>
+
+            </form>
+
+        </form>
+
+
+        <!-- Danh sách task -->
+        <section>
+
+            <ul class="task-list">
+
+                <!-- Header -->
+                <li class="task-list-header">
+
+                    <div class="col-id">
+                        #
+                    </div>
+
+                    <div class="col-content">
+                        Content
+                    </div>
+
+                    <div class="col-date">
+                        Due date
+                    </div>
+
+                    <div class="col-status">
+                        Status
+                    </div>
+
+                    <div class="col-assign">
+                        Assigned to
+                    </div>
+
+                    <div class="col-action">
+                        Action
+                    </div>
+
+                </li>
+
+
+                <!--
+                    JavaScript sẽ tạo các task
+                    và đưa vào đây
+                -->
+                <div id="task-list-content"></div>
+
+            </ul>
+
+        </section>
+
+    </main>
+
+    <script src="./main.js"></script>
+
+</body>
+</html>

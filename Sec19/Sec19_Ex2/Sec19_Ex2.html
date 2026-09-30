@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <link rel="stylesheet" href="./Sec19_Ex2.css">
+</head>
+<body>
+
+    <main class="task-container">
+        <!-- Tiêu đề trang -->
+        <header class="task-header">
+            <h1 class="task-title">Task Management</h1>
+        </header>
+
+        <!-- Khu vực Form nhập dữ liệu -->
+        <section>
+            <form id="form" class="task-form" action="#" method="POST">
+                <div class="input">
+                  <input id="content" type="text" class="form-input" placeholder="Content" aria-label="Content">
+                <!-- <div id="mes-content"></div> -->
+                <input id="due-date" type="date" class="form-input" placeholder="mm/dd/yyyy" aria-label="Due date">
+                <!-- <div id="mes-due-date"></div> -->
+                <select id="status" class="form-select" aria-label="Choose status">
+                    <option selected disabled>Choose status</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <!-- <div id="mes-status"></div> -->
+                <input id="assigned-to" type="text" class="form-input" placeholder="Username" aria-label="Username">
+                <!-- <div id="mes-assigned-to"></div> -->
+                <button id="btn-submit" type="submit" class="form-submit">Submit</button>
+                </div>
+                
+                <div class="mes" id="mes"></div>
+                  
+                
+            </form>
+        </section>
+
+        <!-- Khu vực hiển thị bảng Task -->
+        <section class="task-table-section">
+            <table class="task-table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Content</th>
+                        <th scope="col">Due date</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Assigned to</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="lists">
+                    
+                </tbody>
+            </table>
+        </section>
+    </main>
+<script src="./Sec19_Ex2.js"></script>
+</body>
+</html>

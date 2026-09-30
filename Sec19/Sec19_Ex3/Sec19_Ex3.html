@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./Sec19_Ex3.css" />
+  </head>
+  <body>
+    <div class="login-card">
+      <h1 class="login-title">Login</h1>
+
+      <form id="loginForm">
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="email" class="form-label">Email:</label>
+          <input
+            type="email"
+            id="email"
+            class="form-input"
+            placeholder="Enter your email address"
+            required
+          />
+          <small class="mes"></small>
+        </div>
+
+        <!-- Password Field with Pure Unicode Eye Toggle -->
+        <div class="form-group">
+          <label for="password" class="form-label">Password:</label>
+          <div class="input-container">
+            <input
+              type="password"
+              id="password"
+              class="form-input"
+              style="padding-right: 45px"
+              placeholder="Enter your password"
+              required
+            />
+            <button
+              type="button"
+              id="togglePasswordBtn"
+              class="toggle-password"
+              title="Hiện/Ẩn mật khẩu"
+            >
+              <i class="icon-app fa-solid fa-eye icon-open"></i>
+              <i
+                class="icon- disapp fa-solid fa-eye-slash icon-close hidden"
+              ></i>
+            </button>
+          </div>
+          <small class="mes"></small>
+        </div>
+        <div id="remember">
+          <input type="checkbox" id="remember" />
+          <label for="remember"> Ghi nhớ tài khoản trong 24 giờ </label>
+        </div>
+        <!-- Submit Button -->
+        <button id="btn-submit" type="submit" class="login-btn">Login</button>
+      </form>
+
+      <!-- Footer Links -->
+      <div class="card-footer">
+        <a href="#" class="footer-link">Forgot password?</a>
+        <span class="footer-or">or</span>
+        <a href="../Sec19_Ex1/Sec19_Ex1.html" class="footer-link">SignUp</a>
+      </div>
+    </div>
+
+    <div id="customModal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-title">Thông báo</div>
+        <div id="modalMessage" class="modal-text">
+          Email hoặc mật khẩu không trùng khớp, vui lòng đăng nhập lại
+        </div>
+        <button class="modal-btn">OK</button>
+      </div>
+    </div>
+    <div id="successModal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="success-icon">✓</div>
+        <div class="modal-title">Đăng nhập thành công!</div>
+        <div id="modalMessage" class="modal-text">
+          Chào mừng bạn quay trở lại hệ thống.
+        </div>
+        <button class="modal-btn">Đóng</button>
+      </div>
+    </div>
+    <script src="./Sec19_Ex3.js"></script>
+  </body>
+</html>

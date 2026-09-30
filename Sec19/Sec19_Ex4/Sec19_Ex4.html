@@ -1,0 +1,38 @@
+
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="./Sec19_Ex4.css">
+</head>
+<body>
+    <div class="todo-container">
+        <h1 class="todo-title">Todo App</h1>
+
+        <!-- Input Section -->
+        <form id="todo-form" class="input-row">
+            <input
+                type="text"
+                id="todo-input"
+                class="todo-input"
+                placeholder="Add your new todo"
+                autocomplete="off"
+            >
+            <button type="submit" class="add-btn" id="add-btn">+</button>
+        </form>
+
+        <!-- Tasks List -->
+        <div class="task-list" id="task-list"></div>
+
+        <!-- Footer Section -->
+        <div class="todo-footer">
+            <span id="pending-count">You have 0 pending tasks</span>
+            <button class="clear-btn" id="clear-btn">Clear All</button>
+        </div>
+    </div>
+
+    <script src="./Sec19_Ex4.js"></script>
+</body>
+</html>

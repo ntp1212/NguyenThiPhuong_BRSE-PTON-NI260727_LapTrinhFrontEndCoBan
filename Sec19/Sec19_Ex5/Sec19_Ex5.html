@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmark Manager</title>
+  <link rel="stylesheet" href="./Sec19_Ex5.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>MY BOOKMARKS</h1>
+      <button class="add-bookmark-btn" id="open-modal" type="button">ADD BOOKMARK</button>
+    </header>
+
+    <section class="bookmark-list" id="bookmark-list" aria-label="Danh sách website yêu thích"></section>
+    <p class="empty-message" id="empty-message" hidden>Bạn chưa lưu website nào. Hãy nhấn “ADD BOOKMARK” để bắt đầu nhé!</p>
+  </main>
+
+  <div class="modal-overlay" id="modal-overlay">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-header">
+        <h2 id="modal-title">Add Bookmark</h2>
+        <button class="close-modal" id="close-modal" type="button" aria-label="Đóng">×</button>
+      </div>
+
+      <form id="bookmark-form" class="modal-body">
+        <label for="website-name">Website Name</label>
+        <input id="website-name" name="websiteName" type="text" autocomplete="off" autofocus>
+        <small class="error-message" id="name-error"></small>
+
+        <label for="website-url">Website URL</label>
+        <input id="website-url" name="websiteUrl" type="text" inputmode="url" placeholder="https://example.com" autocomplete="url">
+        <small class="error-message" id="url-error"></small>
+
+        <button class="save-btn" type="submit">Save</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="./Sec19_Ex5.js"></script>
+</body>
+</html>

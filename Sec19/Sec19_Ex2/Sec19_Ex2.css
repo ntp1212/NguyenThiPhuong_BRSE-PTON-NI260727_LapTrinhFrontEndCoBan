@@ -1,0 +1,135 @@
+/* Reset cơ bản */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f5f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Khung chính chứa ứng dụng */
+.task-container {
+  background-color: #ffffff;
+  width: 1000px;
+  max-width: 100%;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Tiêu đề */
+.task-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.task-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Form nhập liệu sử dụng Flexbox */
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.form-input,
+.form-select {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  background-color: #fff;
+  color: #555;
+}
+
+.form-input:focus,
+.form-select:focus {
+  border-color: #007bff;
+}
+
+.form-submit {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-submit:hover {
+  background-color: #0056b3;
+}
+
+/* Bảng hiển thị danh sách công việc */
+.task-table-section {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.task-table th {
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: bold;
+  padding: 12px 10px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.task-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+
+/* Nút thao tác trong bảng */
+.btn {
+  padding: 4px 10px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #333;
+}
+
+.btn:hover {
+  background-color: #f1f1f1;
+}
+
+.btn-delete {
+  margin-left: 5px;
+}
+.mes {
+  display: flex;
+  gap: 10px;
+  font-size: 10px;
+  color: red;
+}
+.mes-content {
+ min-width: 25%;
+}
