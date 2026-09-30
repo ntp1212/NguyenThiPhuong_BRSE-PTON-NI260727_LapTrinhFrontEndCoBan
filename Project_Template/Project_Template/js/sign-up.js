@@ -40,24 +40,37 @@ console.log(signupToast);
 let msg = document.getElementById("msg");
 console.log(msg);
 
+// hàm tắt mes eror
+let hideErrorMes = () => {
+  // email
+    msg.classList.remove("show");
+    signupError.classList.add("hidden");
+    emailError.classList.add("hidden");
+    signupValidation.classList.add("hidden");
+    emailCannotBlank.classList.add("hidden");
+
+  // user
+  msg.classList.remove("show");
+    signupValidation.classList.add("hidden");
+    usernameCannotBlank.classList.add("hidden");
+
+  // mật khẩu 
+  passwordMinlengthError.classList.add("hidden");
+  passwordNumberRequiredError.classList.add("hidden");
+  passwordUpercaseLowercaseError.classList.add("hidden");
+  msg.classList.remove("show");
+  signupValidation.classList.add("hidden");
+  passwordCannotBlank.classList.add("hidden");
+};
 //----------- Kiểm tra email ----------------
-// email bỏ trống
-let checkEmailBlank = () => {
+let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+let checkEmail = () => {
   if (inputEmail.value.trim() === "") {
     msg.classList.add("show");
     signupValidation.classList.remove("hidden");
     emailCannotBlank.classList.remove("hidden");
     return false;
-  } else {
-    msg.classList.remove("show");
-    signupValidation.classList.add("hidden");
-    emailCannotBlank.classList.add("hidden");
-    return true;
-  }
-};
-let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-let checkEmail = () => {
-  if (!regexEmail.test(inputEmail.value)) {
+  } else if (!regexEmail.test(inputEmail.value)) {
     // trường hợp email bị bỏ trống sau khi blur vào và nhấc ra
     // console.log('hàm đã chạy');
     msg.classList.add("show");
@@ -67,9 +80,7 @@ let checkEmail = () => {
   } else {
     // trường hợp đúng định dạng
     // console.log('hàm');
-    msg.classList.remove("show");
-    signupError.classList.add("hidden");
-    emailError.classList.add("hidden");
+    hideErrorMes();
     return true;
   }
 };
@@ -86,9 +97,7 @@ let checkUsernameBlank = () => {
     usernameCannotBlank.classList.remove("hidden");
     return false;
   } else {
-    msg.classList.add("show");
-    signupValidation.classList.add("hidden");
-    usernameCannotBlank.classList.add("hidden");
+    hideErrorMes();
     return true;
   }
 };
@@ -110,22 +119,6 @@ closeEye.addEventListener("click", () => {
 });
 
 //--------------------- kiểm tra mật khẩu ------------------------
-// mật khẩu không trống
-// email bỏ trống
-let checkPassBlank = () => {
-  if (inputPassword.value.trim() === "") {
-    msg.classList.add("show");
-    signupValidation.classList.remove("hidden");
-    passwordCannotBlank.classList.remove("hidden");
-    return false;
-  } else {
-    msg.classList.remove("show");
-    signupValidation.classList.add("hidden");
-    passwordCannotBlank.classList.add("hidden");
-    return true;
-  }
-};
-
 // Ít nhất 8 ký tự
 let regexPassLength = /^.{8,}$/;
 // Có ít nhất 1 chữ số
@@ -136,15 +129,14 @@ let regexPassUpperLower = /(?=.*[A-Z])(?=.*[a-z])/;
 let regexSpecial = /(?=.*[^A-Za-z0-9\s])/;
 // Không có khoảng trắng
 let regexSpace = /^\S+$/;
-let hidePassErrorMes = () => {
-  passwordMinlengthError.classList.add("hidden");
-  passwordNumberRequiredError.classList.add("hidden");
-  passwordUpercaseLowercaseError.classList.add("hidden");
-};
+
 let checkPass = () => {
-  if (
-    inputPassword.value.trim() === "" ||
-    !regexPassLength.test(inputPassword.value.trim())
+   if (inputPassword.value.trim() === "") {
+    msg.classList.add("show");
+    signupValidation.classList.remove("hidden");
+    passwordCannotBlank.classList.remove("hidden");
+    return false;
+  } else if (!regexPassLength.test(inputPassword.value.trim())
   ) {
     // mật khẩu bị bỏ trống hoặc ít hon 8 kí tự sau khi blur vào và nhấc ra
     msg.classList.add("show");
@@ -166,7 +158,7 @@ let checkPass = () => {
     passwordUpercaseLowercaseError.classList.remove("hidden");
     return false;
   } else {
-    hidePassErrorMes();
+    hideErrorMes();
     return true;
   }
 };
@@ -176,32 +168,6 @@ inputPassword.addEventListener("blur", () => {
   checkPass();
 });
 
-// ----------------------- Kiểm tra lại và đăng nhập -------------------------
-// let form = document.getElementById('sign-up-form');
-// console.log(form);
-// form.addEventListener('submit', (ev)=> {
-//     // ngăn chặn sự kiện mặc định
-//     ev.preventDefault();
-//     // kiểm tra input không trống
-//     checkEmailBlank();
-//     checkUsernameBlank();
-//     checkPassBlank();
-//     // kiểm tra đã có email đăng kí tồn tại chưa
-//     let isExist = users.some(function (user) {
-//     return user.email === inputEmail.value.trim();
-//   });
-//   if(checkEmailBlank() && checkPassBlank() && checkUsernameBlank()
-//     && checkEmail() && checkPass()) {
-//         if(isExist) {
-//             msg.classList.add('show');
-//             signupError.classList.remove('hidden');
-//         } else {
-//             msg.classList.remove('show');
-//             signupError.classList.add('hidden');
-//             signupToast.classList.remove('hidden');
-//         }
-//     }
-// })
 let form = document.getElementById("sign-up-form");
 form.addEventListener("submit", (ev) => {
   ev.preventDefault();
@@ -251,13 +217,17 @@ form.addEventListener("submit", (ev) => {
 
     // Xóa dữ liệu form
     form.reset();
-    msg.classList.remove("show");
-    signupValidation.classList.remove("hidden");
-    signupError.classList.remove("hidden");
-    signupToast.classList.add("hidden");
+    hideErrorMes();
     // Chuyển sang trang đăng nhập sau 0.2 giây
     setTimeout(() => {
     window.location.href = './sign-in.html';
 }, 200);
   }
+  
 });
+let cancel = document.querySelector('.cancel');
+console.log(cancel);
+cancel.addEventListener('click', () => {
+  hideErrorMes();
+    
+})
