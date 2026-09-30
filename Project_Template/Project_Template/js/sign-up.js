@@ -221,7 +221,7 @@ form.addEventListener("submit", (ev) => {
     // Chuyển sang trang đăng nhập sau 0.2 giây
     setTimeout(() => {
     window.location.href = './sign-in.html';
-}, 200);
+}, 1000);
   }
   
 });
