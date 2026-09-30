@@ -206,7 +206,7 @@ let form = document.getElementById("sign-up-form");
 form.addEventListener("submit", (ev) => {
   ev.preventDefault();
   // Lấy dữ liệu tài khoản đã lưu
-  let users = JSON.parse(localStorage.getItem("users")) || [];
+  let userList = JSON.parse(localStorage.getItem("userList")) || [];
   // Gọi các hàm và lấy kết quả kiểm tra
   let isEmailValid = checkEmail();
   let isUsernameValid = checkUsernameBlank();
@@ -218,7 +218,7 @@ form.addEventListener("submit", (ev) => {
   }
 
   // Kiểm tra email đã tồn tại chưa
-  let isExist = users.some((user) => {
+  let isExist = userList.some((user) => {
     return user.email === inputEmail.value.trim();
   });
 
@@ -239,9 +239,9 @@ form.addEventListener("submit", (ev) => {
       password: inputPassword.value,
     };
 
-    users.push(newUser);
+    userList.push(newUser);
     // Lưu vào Local Storage
-    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("userList", JSON.stringify(userList));
     console.log("dk thanh cong");
     // Hiện thông báo đăng ký thành công
     msg.classList.add("show");
