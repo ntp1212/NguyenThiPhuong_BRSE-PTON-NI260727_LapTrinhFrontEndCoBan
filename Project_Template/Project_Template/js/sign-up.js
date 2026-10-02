@@ -145,14 +145,14 @@ let checkPass = () => {
     return false;
   } else if (!regexPassNumber.test(inputPassword.value)) {
     // mật khẩu không có số
-    hidePassErrorMes();
+    hideErrorMes();
     msg.classList.add("show");
     signupError.classList.remove("hidden");
     passwordNumberRequiredError.classList.remove("hidden");
     return false;
   } else if (!regexPassUpperLower.test(inputPassword.value)) {
     // Mật khẩu phải có chữ hoa và chữ thường
-    hidePassErrorMes();
+    hideErrorMes();
     msg.classList.add("show");
     signupError.classList.remove("hidden");
     passwordUpercaseLowercaseError.classList.remove("hidden");
@@ -167,12 +167,13 @@ inputPassword.addEventListener("blur", () => {
 
   checkPass();
 });
-
+// Lấy dữ liệu tài khoản đã lưu
+  let userList = JSON.parse(localStorage.getItem("userList")) || [];
+  
 let form = document.getElementById("sign-up-form");
 form.addEventListener("submit", (ev) => {
   ev.preventDefault();
-  // Lấy dữ liệu tài khoản đã lưu
-  let userList = JSON.parse(localStorage.getItem("userList")) || [];
+  
   // Gọi các hàm và lấy kết quả kiểm tra
   let isEmailValid = checkEmail();
   let isUsernameValid = checkUsernameBlank();
@@ -189,8 +190,6 @@ form.addEventListener("submit", (ev) => {
   });
 
   if (isExist) {
-    console.log("Taif khoanr ton tai");
-
     msg.classList.add("show");
     signupValidation.classList.add("hidden");
     signupError.classList.remove("hidden");
@@ -200,14 +199,20 @@ form.addEventListener("submit", (ev) => {
   } else {
     // Tạo tài khoản mới
     let newUser = {
-      email: inputEmail.value.trim(),
-      username: inputUsername.value.trim(),
-      password: inputPassword.value,
+      usercode: `U0${Date.now()}`,
+    username: inputUsername.value.trim(),
+    email: inputEmail.value,
+    password: inputPassword.value,
+    role: 'user',
+    birthday: '',
+    status: 'Active',
+    description:'',
     };
 
     userList.push(newUser);
     // Lưu vào Local Storage
     localStorage.setItem("userList", JSON.stringify(userList));
+    console.log(JSON.parse(localStorage.getItem("userlist")));
     console.log("dk thanh cong");
     // Hiện thông báo đăng ký thành công
     msg.classList.add("show");
@@ -231,3 +236,4 @@ cancel.addEventListener('click', () => {
   hideErrorMes();
     
 })
+
